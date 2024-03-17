@@ -1,4 +1,4 @@
-﻿var tabla;
+﻿let tabla;
 
 $(document).ready(function () {
     InicializarDataTable("tablaClientes");
@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 function InicializarDataTable(nombreTabla) {
 
-    var propiedades = {
+    let propiedades = {
         "ajax": {
             "url": base_url + "/Cliente/CargarDatos",
             "type": "POST",
@@ -20,8 +20,8 @@ function InicializarDataTable(nombreTabla) {
             { "data": "Correo", "name": "Correo" },
             {
                 "data": "Mascotas", "name": "Mascotas", "render": function (data, type, full) {
-                    var str = "";
-                    for (var i = 0; i < data.length; i++)
+                    let str = "";
+                    for (let i = 0; i < data.length; i++)
                         str += data[i] + ((i == data.length - 1) ? "" : ",");
                     return str;
                 }
@@ -41,12 +41,12 @@ function InicializarAcciones() {
     });
 
     $("#Editar").on("click", function () {
-        var seleccionado = tabla.rows('.selected').data()[0];
+        let seleccionado = tabla.rows('.selected').data()[0];
         abrirModalCliente(seleccionado, "E");
     });
 
     $("#Eliminar").on("click", function () {
-        var seleccionado = tabla.rows('.selected').data()[0];
+        let seleccionado = tabla.rows('.selected').data()[0];
         eliminarCliente(seleccionado);
     });
 }
@@ -54,13 +54,13 @@ function InicializarAcciones() {
 // Función que abre la información del modal del cliente.
 function abrirModalCliente(cliente, tipo) {
 
-    var titulo = (tipo == "E" ? "Editar" : "Crear") + " cliente";
-    var tituloSecundario = (tipo == "E" ? "Edición" : "Creación") + " de cliente";
-    var mascotas = "";
+    let titulo = (tipo == "E" ? "Editar" : "Crear") + " cliente";
+    let tituloSecundario = (tipo == "E" ? "Edición" : "Creación") + " de cliente";
+    let mascotas = "";
 
     if (tipo == "E") {
         if (cliente != null && cliente.Mascotas != null && cliente.Mascotas.length > 0) {
-            for (var i = 0; i < usuario.Paises.length; i++) {
+            for (let i = 0; i < usuario.Paises.length; i++) {
                 mascotas += cliente.Mascotas[i].Nombre + (cliente.Mascotas.length - 1 == i ? "" : ", ");
             }
         } else
@@ -82,7 +82,7 @@ function abrirModalCliente(cliente, tipo) {
             '</button>'
         );
 
-    var ventana = '<div class="container-fluid">' +
+    let ventana = '<div class="container-fluid">' +
         '<div class="row">' + '<h3>' + tituloSecundario + '</h3>' + '</div>' +
         '<form id="formularioCliente" class="needs-validation" novalidate="">' +
         '<div class="row" >' +
@@ -179,7 +179,7 @@ function abrirModalCliente(cliente, tipo) {
 
     // Evento que se dispara cuando se cambie la provincia.
     $("#provincia").on("change", function () {
-        var idProvincia = $(this).val();
+        let idProvincia = $(this).val();
         
         if (idProvincia == "-1") {
             $("#canton").empty();
@@ -193,13 +193,13 @@ function abrirModalCliente(cliente, tipo) {
 
     // Evento que se dispara cuando se cambie el cantón.
     $("#canton").on("change", function () {
-        var idCanton = $(this).val();
+        let idCanton = $(this).val();
         obtenerDistritos(idCanton);
     });
 
     // Evento que se dispara cuando se escribe la cédula.
     $("#cedula").on("change", function () {
-        var cedula = $("#cedula").val();
+        let cedula = $("#cedula").val();
         validarCedula(cedula);
     });
 
@@ -240,7 +240,7 @@ function obtenerSexos() {
         cache: false,
         success: function (respuesta) {
             if (respuesta && respuesta.sexos && respuesta.sexos.length > 0) {
-                var sexos = respuesta.sexos;
+                let sexos = respuesta.sexos;
                 repintarComboSexo(sexos);
             }
         }
@@ -250,12 +250,12 @@ function obtenerSexos() {
 // Función que realiza el repintado del combo de sexos.
 function repintarComboSexo(sexos) {
 
-    var comboSexo = $("#sexo");
+    let comboSexo = $("#sexo");
     comboSexo.empty();
     //comboSexo.append($("<option>", { value: null, text: "" }));
 
-    for (var i = 0; i < sexos.length; i++) {
-        var elemento = $("<option>", {
+    for (let i = 0; i < sexos.length; i++) {
+        let elemento = $("<option>", {
             value: sexos[i].Id,
             text: sexos[i].Nombre
         });
@@ -273,7 +273,7 @@ function obtenerProvincias() {
         cache: false,
         success: function (respuesta) {
             if (respuesta && respuesta.provincias && respuesta.provincias.length > 0) {
-                var provincias = respuesta.provincias;
+                let provincias = respuesta.provincias;
                 repintarComboProvincias(provincias);
             }
         }
@@ -283,12 +283,12 @@ function obtenerProvincias() {
 // Función que realiza el repintado del combo de provincias.
 function repintarComboProvincias(provincias) {
 
-    var comboProvincia = $("#provincia");
+    let comboProvincia = $("#provincia");
     comboProvincia.empty();
     comboProvincia.append($("<option>", { value: -1, text: "N/A" }));
 
-    for (var i = 0; i < provincias.length; i++) {
-        var elemento = $("<option>", {
+    for (let i = 0; i < provincias.length; i++) {
+        let elemento = $("<option>", {
             value: provincias[i].IdProvincia,
             text: provincias[i].Nombre
         });
@@ -309,7 +309,7 @@ function obtenerCantones(idProvincia) {
         cache: false,
         success: function (respuesta) {
             if (respuesta && respuesta.cantones && respuesta.cantones.length > 0) {
-                var cantones = respuesta.cantones;
+                let cantones = respuesta.cantones;
                 repintarComboCantones(cantones);
             }
         }
@@ -319,12 +319,12 @@ function obtenerCantones(idProvincia) {
 // Función que realiza el repintado del combo de cantones.
 function repintarComboCantones(cantones) {
 
-    var comboCantones = $("#canton");
+    let comboCantones = $("#canton");
     comboCantones.empty();
     comboCantones.append($("<option>", { value: null, text: "" }));
 
-    for (var i = 0; i < cantones.length; i++) {
-        var elemento = $("<option>", {
+    for (let i = 0; i < cantones.length; i++) {
+        let elemento = $("<option>", {
             value: cantones[i].IdCanton,
             text: cantones[i].Nombre
         });
@@ -345,7 +345,7 @@ function validarCedula(cedula) {
         cache: false,
         success: function (respuesta) {
             if (respuesta) {
-                var estado = respuesta.estado;
+                let estado = respuesta.estado;
 
                 if (estado) {
                     // Limpio la cédula ingresada.
@@ -371,7 +371,7 @@ function obtenerDistritos(idCanton) {
         cache: false,
         success: function (respuesta) {
             if (respuesta && respuesta.distritos && respuesta.distritos.length > 0) {
-                var distritos = respuesta.distritos;
+                let distritos = respuesta.distritos;
                 repintarComboDistritos(distritos);
             }
         }
@@ -381,12 +381,12 @@ function obtenerDistritos(idCanton) {
 // Función que realiza el repintado del combo de distritos.
 function repintarComboDistritos(distritos) {
 
-    var comboDistritos = $("#distrito");
+    let comboDistritos = $("#distrito");
     comboDistritos.empty();
     comboDistritos.append($("<option>", { value: null, text: "" }));
 
-    for (var i = 0; i < distritos.length; i++) {
-        var elemento = $("<option>", {
+    for (let i = 0; i < distritos.length; i++) {
+        let elemento = $("<option>", {
             value: distritos[i].IdDistrito,
             text: distritos[i].Nombre
         });
@@ -407,7 +407,7 @@ function cargarDatosCliente(idCliente) {
         cache: false,
         success: function (respuesta) {
             if (respuesta) {
-                var datosCliente = respuesta;
+                let datosCliente = respuesta;
                 repintarDatosCliente(datosCliente);
             }
         }
@@ -441,9 +441,9 @@ function repintarDatosCliente(datosCliente) {
 // Validar agregar cliente.
 function validarAgregarCliente() {
 
-    var form = $("#formularioCliente")[0];
+    let form = $("#formularioCliente")[0];
 
-    var validarMandatorio = form.checkValidity();
+    let validarMandatorio = form.checkValidity();
 
     form.classList.add('was-validated');
 
@@ -458,13 +458,13 @@ function validarAgregarCliente() {
 // Agregar cliente.
 function agregarCliente() {
 
-    var validacion = validarAgregarCliente();
+    let validacion = validarAgregarCliente();
 
     if (!validacion)
         return false;
 
     // Datos para enviar a guardar.
-    var datos = {
+    let datos = {
         "PrimerNombre": $("#primerNombre").val(),
         "SegundoNombre": $("#segundoNombre").val(),
         "PrimerApellido": $("#primerApellido").val(),
@@ -506,13 +506,13 @@ function agregarCliente() {
 // Editar cliente.
 function editarCliente(idCliente) {
 
-    var validacion = validarAgregarCliente();
+    let validacion = validarAgregarCliente();
 
     if (!validacion)
         return false;
 
     // Datos para enviar a guardar.
-    var datos = {
+    let datos = {
         "Id": idCliente,
         "PrimerNombre": $("#primerNombre").val(),
         "SegundoNombre": $("#segundoNombre").val(),

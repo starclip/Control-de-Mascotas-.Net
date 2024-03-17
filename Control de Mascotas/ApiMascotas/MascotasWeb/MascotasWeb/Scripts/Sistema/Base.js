@@ -1,21 +1,21 @@
-﻿var getUrl = window.location;
-//var base_url = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1]; // Produ
-var base_url = getUrl.protocol + "//" + getUrl.host;
-var numeroPaginacionDisponible = 10;
+﻿let getUrl = window.location;
+//let base_url = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1]; // Produ
+let base_url = getUrl.protocol + "//" + getUrl.host;
+let numeroPaginacionDisponible = 10;
 
-var General = function () {
+let General = function () {
 
     // Función que permite mostrar mensajes de error.
     this.MostrarMensaje = function (tipo, titulo, mensaje, objetoError, objetoExito) {
 
         // Devuelve la estructura del mensaje a retornar.
-        var estructura = obtenerEstructuraMensaje(titulo, mensaje, tipo);
-        var callbackManual = false;
-        var botones = {};
+        let estructura = obtenerEstructuraMensaje(titulo, mensaje, tipo);
+        let callbackManual = false;
+        let botones = {};
 
         // Defino las funciones de callback;
-        var funcionPositiva = function () { };
-        var funcionNegativa = function () { };
+        let funcionPositiva = function () { };
+        let funcionNegativa = function () { };
 
         // Si el mensaje de error va a ser personalizado.
         if (objetoError) {
@@ -57,8 +57,8 @@ var General = function () {
         }
 
         // Función de retorno del evento.
-        var funcionRetorno = function (esCorrecto) {
-            var resultado;
+        let funcionRetorno = function (esCorrecto) {
+            let resultado;
 
             if (esCorrecto)
                 resultado = funcionPositiva();
@@ -107,7 +107,7 @@ var General = function () {
 
     // Función que genera la tabla del sistema.
     this.GenerarTabla = function (nombreTabla, propiedades) {
-        var tablaSistema;
+        let tablaSistema;
 
         propiedades = obtenerPropiedadesTabla(propiedades);
 
@@ -134,8 +134,8 @@ var General = function () {
 
     // Función que permite obtener todas las propiedades de la tabla.
     function obtenerPropiedadesTabla(propiedades) {
-        var propiedadesFinales = {};
-        var propiedadesBase = {
+        let propiedadesFinales = {};
+        let propiedadesBase = {
             "processing": true,
             "serverSide": true,
             "orderMulti": false,
@@ -153,7 +153,7 @@ var General = function () {
 
     // Función que permite generar el calendario.
     this.GenerarCalendario = function(listaCampos){
-        for (var i = 0; i < listaCampos.length; i++) {
+        for (let i = 0; i < listaCampos.length; i++) {
             $("#" + listaCampos[i]).datepicker({
                 changeMonth: true,
                 changeYear: true,
@@ -170,4 +170,4 @@ var General = function () {
     }
 }
 
-var general = new General();
+let general = new General();
