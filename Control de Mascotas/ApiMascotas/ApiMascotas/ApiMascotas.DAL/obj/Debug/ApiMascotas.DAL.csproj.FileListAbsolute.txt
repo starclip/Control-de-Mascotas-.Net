@@ -1,0 +1,9 @@
+C:\Users\JasonAdminPC\Documents\Control de Mascotas\ApiMascotas\ApiMascotas\ApiMascotas.DAL\bin\Debug\ApiMascotas.DAL.dll
+C:\Users\JasonAdminPC\Documents\Control de Mascotas\ApiMascotas\ApiMascotas\ApiMascotas.DAL\bin\Debug\ApiMascotas.DAL.pdb
+C:\Users\JasonAdminPC\Documents\Control de Mascotas\ApiMascotas\ApiMascotas\ApiMascotas.DAL\bin\Debug\ApiMascotas.Entidades.dll
+C:\Users\JasonAdminPC\Documents\Control de Mascotas\ApiMascotas\ApiMascotas\ApiMascotas.DAL\bin\Debug\ApiMascotas.Entidades.pdb
+C:\Users\JasonAdminPC\Documents\Control de Mascotas\ApiMascotas\ApiMascotas\ApiMascotas.DAL\obj\Debug\ApiMascotas.DAL.csproj.AssemblyReference.cache
+C:\Users\JasonAdminPC\Documents\Control de Mascotas\ApiMascotas\ApiMascotas\ApiMascotas.DAL\obj\Debug\ApiMascotas.DAL.csproj.CoreCompileInputs.cache
+C:\Users\JasonAdminPC\Documents\Control de Mascotas\ApiMascotas\ApiMascotas\ApiMascotas.DAL\obj\Debug\ApiMascotas.DAL.csproj.CopyComplete
+C:\Users\JasonAdminPC\Documents\Control de Mascotas\ApiMascotas\ApiMascotas\ApiMascotas.DAL\obj\Debug\ApiMascotas.DAL.dll
+C:\Users\JasonAdminPC\Documents\Control de Mascotas\ApiMascotas\ApiMascotas\ApiMascotas.DAL\obj\Debug\ApiMascotas.DAL.pdb

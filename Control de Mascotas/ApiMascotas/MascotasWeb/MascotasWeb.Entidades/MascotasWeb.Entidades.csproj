@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E544E7D9-6C06-4E7A-8DBC-FC916748F127}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MascotasWeb.Entidades</RootNamespace>
+    <AssemblyName>MascotasWeb.Entidades</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entidades\Cliente\Cliente.cs" />
+    <Compile Include="Entidades\Cliente\DatosFiltroCliente.cs" />
+    <Compile Include="Entidades\Respuestas\RespuestaNuevo.cs" />
+    <Compile Include="Entidades\Cliente\RespuestaCliente.cs" />
+    <Compile Include="Entidades\Generales\Canton.cs" />
+    <Compile Include="Entidades\Generales\Control.cs" />
+    <Compile Include="Entidades\Generales\Distrito.cs" />
+    <Compile Include="Entidades\Generales\Provincia.cs" />
+    <Compile Include="Entidades\Respuestas\RespuestaCanton.cs" />
+    <Compile Include="Entidades\Respuestas\RespuestaEstado.cs" />
+    <Compile Include="Entidades\Respuestas\RespuestaDistrito.cs" />
+    <Compile Include="Entidades\Respuestas\RespuestaProvincia.cs" />
+    <Compile Include="Entidades\Respuestas\RespuestaSexo.cs" />
+    <Compile Include="Entidades\Generales\Sexo.cs" />
+    <Compile Include="Entidades\Respuestas\RespuestaTotales.cs" />
+    <Compile Include="Entidades\Mascota\Mascota.cs" />
+    <Compile Include="Entidades\Generales\Persona.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entidades\Veterinario\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

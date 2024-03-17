@@ -1,0 +1,8 @@
+{
+  "RutaArchivoProvincias": "Documentacion\\DivisionPolitica\\adm1-provincias.csv",
+  "RutaArchivoCantones": "Documentacion\\DivisionPolitica\\adm2-cantones.csv",
+  "RutaArchivoDistritos": "Documentacion\\DivisionPolitica\\adm3-distritos.csv",
+  "HileraConexion": "Server=.;Database=MSC;user=sa;password=prueba123*;",
+  "SPLimpiar": "[tmp].[LimpiarTablaTemporal]",
+  "SPActualizar": "[tmp].[ActualizarDivisionPolitica]"
+}

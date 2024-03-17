@@ -1,0 +1,11 @@
+Catálogos:
+
+- Horas
+- Sexo Persona
+- Sexo Mascota
+- Estado Veterinario
+- Estado Mascota
+- Estado Tratamiento
+- Estado Cita
+- Estado Administrador
+- Estado cliente

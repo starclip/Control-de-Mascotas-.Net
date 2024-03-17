@@ -1,0 +1,33 @@
+CREATE OR ALTER PROCEDURE [per].[EliminarCliente]
+	@IDCLIENTE BIGINT,
+	@IdVeterinarioActual BIGINT
+AS BEGIN
+
+	DECLARE @ESTADO BIT = CONVERT(BIT, 0);
+
+	-- Obtengo el estado nuevo para eliminar.
+	DECLARE @IdEstadoEliminado BIGINT = (
+		SELECT CV.IDCATALOGOVALOR
+		FROM SIS.CATALOGOVALOR CV
+		INNER JOIN SIS.CATALOGO C
+			ON CV.IDCATALOGO = C.IDCATALOGO
+			AND C.CODIGO = 'ESTADOSCLIENTE'
+			AND CV.CODIGO = 'ELM'
+	);
+
+	-- Actualizo los datos del cliente.
+	UPDATE PER.CLIENTE
+	SET 
+		IDESTADO = @IdEstadoEliminado,
+		FECHAMODIFICACION = GETDATE(),
+		IDPERSONAMODIFICACION = @IdVeterinarioActual
+	WHERE IDCLIENTE = @IDCLIENTE
+
+	-- Si se actualizo los datos del cliente.
+	IF (@@ROWCOUNT > 0)
+		SET @ESTADO = CONVERT(BIT, 1)
+
+	SELECT @ESTADO AS ESTADO;
+
+	RETURN 1;
+END

@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Cliente";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <h1>Lista de clientes</h1>
+        </div>
+    </div>
+
+    <div class="row" id="acciones">
+        <button type="button" id="Agregar" data-toggle="tooltip" class="botonEEE btn btn-success" title="Agregar">Agregar | <i class="fas fa-plus"></i></button>
+        <button type="button" id="Editar" data-toggle="tooltip" class="botonEEE btn btn-success disabled" title="Editar">Editar | <i class="fas fa-edit"></i></button>
+        <button type="button" id="Eliminar" data-toggle="tooltip" class="botonEEE btn btn-success disabled" title="Eliminar">Eliminar | <i class="fas fa-trash"></i></button>
+    </div>
+</div>
+
+<div class="row">
+    <br />
+</div>
+
+<div>
+    <table id="tablaClientes" class="table table-responsive nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Cédula</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+                <th>Mascotas asociadas</th>
+                <th>Dirección</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<!-- Modal clientes -->
+<div class="modal fade" id="modalCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-personal" role="document">
+        <div class="modal-content">
+            <div class="modal-header" id="headerModal">
+            </div>
+            <div class="modal-body" id="bodyModal">
+            </div>
+            <div class="modal-footer" id="footerModal">
+                <button id="botonModalCerrar" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button id="botonModalAccion" type="button" class="btn btn-primary"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="@Url.Content("~/Scripts/Sistema/Cliente.js")"></script>
+}

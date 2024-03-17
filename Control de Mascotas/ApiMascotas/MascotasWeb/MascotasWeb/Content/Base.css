@@ -1,0 +1,17 @@
+﻿.botonEEE {
+    width: fit-content;
+    margin-right: 10px;
+}
+
+.Titulo {
+    font-size: 30px;
+    font-family: "Brush Script MT", cursive;
+}
+
+.nav-link {
+    color: black;
+}
+
+.modal-dialog-personal {
+    max-width: 800px !important;
+}

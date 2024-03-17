@@ -1,0 +1,6 @@
+C:\Users\JasonAdminPC\Documents\Control de Mascotas\ApiMascotas\MascotasWeb\MascotasWeb.Entidades\bin\Debug\MascotasWeb.Entidades.dll
+C:\Users\JasonAdminPC\Documents\Control de Mascotas\ApiMascotas\MascotasWeb\MascotasWeb.Entidades\bin\Debug\MascotasWeb.Entidades.pdb
+C:\Users\JasonAdminPC\Documents\Control de Mascotas\ApiMascotas\MascotasWeb\MascotasWeb.Entidades\obj\Debug\MascotasWeb.Entidades.csproj.CoreCompileInputs.cache
+C:\Users\JasonAdminPC\Documents\Control de Mascotas\ApiMascotas\MascotasWeb\MascotasWeb.Entidades\obj\Debug\MascotasWeb.Entidades.dll
+C:\Users\JasonAdminPC\Documents\Control de Mascotas\ApiMascotas\MascotasWeb\MascotasWeb.Entidades\obj\Debug\MascotasWeb.Entidades.pdb
+C:\Users\JasonAdminPC\Documents\Control de Mascotas\ApiMascotas\MascotasWeb\MascotasWeb.Entidades\obj\Debug\MascotasWeb.Entidades.csproj.AssemblyReference.cache

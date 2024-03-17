@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05E5A6AC-706E-4AB2-9986-6C7138F4C05C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MascotasWeb.BL</RootNamespace>
+    <AssemblyName>MascotasWeb.BL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BL\Cliente\EditarCliente.cs" />
+    <Compile Include="BL\Cliente\AgregarCliente.cs" />
+    <Compile Include="BL\Cliente\EliminarCliente.cs" />
+    <Compile Include="BL\Cliente\ObtenerCliente.cs" />
+    <Compile Include="BL\Cliente\ObtenerClientes.cs" />
+    <Compile Include="BL\Cliente\ObtenerTotal.cs" />
+    <Compile Include="BL\General\ValidarCedula.cs" />
+    <Compile Include="BL\General\ObtenerDistritos.cs" />
+    <Compile Include="BL\General\ObtenerCantones.cs" />
+    <Compile Include="BL\General\ObtenerProvincias.cs" />
+    <Compile Include="BL\General\ObtenerSexos.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MascotasWeb.Entidades\MascotasWeb.Entidades.csproj">
+      <Project>{E544E7D9-6C06-4E7A-8DBC-FC916748F127}</Project>
+      <Name>MascotasWeb.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MascotasWeb.Servicios\MascotasWeb.Servicios.csproj">
+      <Project>{b6c42110-fe9e-4565-9efe-5e49dc32753f}</Project>
+      <Name>MascotasWeb.Servicios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
